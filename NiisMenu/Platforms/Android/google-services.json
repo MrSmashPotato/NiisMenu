@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "394332942190",
+    "project_id": "niismenudatabase",
+    "storage_bucket": "niismenudatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394332942190:android:0b0e29ee85d3a6d3221b7f",
+        "android_client_info": {
+          "package_name": "com.companyname.niismenu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNb6uMnqgovfRPQ1HP4FFHO9mFFwBffy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

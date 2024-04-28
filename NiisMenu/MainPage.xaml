@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RestaurantMenu.LoginPage"
-             Title="Login"
-             BackgroundColor="Black">
+             x:Class="NiisMenu.MainPage"
+             Title="Main Page"
+             
+             BackgroundColor="Blue">
 
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
-        <Entry Placeholder="Username" x:Name="UsernameEntry" BackgroundColor="White" TextColor="Black"/>
-        <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" BackgroundColor="White" TextColor="Black"/>
-        <Button Text="Login" Clicked="OnLoginClicked" BackgroundColor="Red" TextColor="White"/>
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <Button Text="Log in" Clicked="OnLoginButtonClicked" BackgroundColor="Red" TextColor="White"/>
     </StackLayout>
 
 </ContentPage>

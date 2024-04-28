@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NiisMenu.AdminPage"
+             Title="Admin Page"
+             BackgroundColor="White">
+
+    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
+        <!-- Other admin page content goes here -->
+
+        <!-- Button to navigate to AddMenuItemPage -->
+        <Button Text="Add Menu Item" Clicked="OnAddMenuItemClicked" BackgroundColor="SkyBlue" TextColor="White" WidthRequest="150" Margin="0,10,0,0"/>
+    </StackLayout>
+
+</ContentPage>

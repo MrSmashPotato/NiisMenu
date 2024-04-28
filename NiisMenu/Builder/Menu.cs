@@ -12,5 +12,6 @@ namespace NiisMenu.Builder
         public int Price { get; set; }
         public string Category { get; set; }
         public bool IsAvailable { get; set; }
+        public string TimeStamp { get; set; }
     }
 }

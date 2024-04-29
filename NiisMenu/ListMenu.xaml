@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NiisMenu.ListMenu"
+             Title="ListMenu">
+    <StackLayout>
+        <StackLayout>
+            <Picker x:Name="CategoryPicker" Title="Choose category" BackgroundColor="White" TextColor="Black" WidthRequest="200" Margin="0,0,0,10">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Drinks</x:String>
+                        <x:String>Food</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <ListView x:Name="MenuListView" 
+                  VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand"
+                  ItemSelected="MenuListView_ItemSelected">
+            <!-- Here you will bind the ListView's ItemsSource property to the data source in your code-behind -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!-- Define your item template here -->
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" FontSize="18" FontAttributes="Italic" />
+                            <Label Text="{Binding Price}" FontSize="20" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+       
+    </StackLayout>
+</ContentPage>

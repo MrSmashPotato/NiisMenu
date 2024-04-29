@@ -3,12 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.AddMenu"
              Title="Add Menu Item"
-             BackgroundColor="White">
+             BackgroundColor="Beige">
 
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
-        <Entry Placeholder="Name" x:Name="NameEntry" BackgroundColor="LightGray" TextColor="Black" WidthRequest="200" Margin="0,0,0,10"/>
-        <Entry Placeholder="Price" x:Name="PriceEntry" Keyboard="Numeric" BackgroundColor="LightGray" TextColor="Black" WidthRequest="200" Margin="0,0,0,10"/>
-        <Picker x:Name="CategoryPicker" Title="Category" BackgroundColor="LightGray" TextColor="Black" WidthRequest="200" Margin="0,0,0,10">
+        <Entry Placeholder="Name" x:Name="NameEntry" 
+               BackgroundColor="LightGray" 
+               TextColor="Black" 
+               WidthRequest="200" 
+               Margin="0,0,0,10"/>
+        <Entry Placeholder="Price" 
+               x:Name="PriceEntry" 
+               Keyboard="Numeric" 
+               BackgroundColor="LightGray" 
+               TextColor="Black" 
+               WidthRequest="200" 
+               Margin="0,0,0,10"/>
+        <Picker x:Name="CategoryPicker" 
+                Title="Category"
+                BackgroundColor="LightGray"
+                TextColor="Black"
+                WidthRequest="200" 
+                Margin="0,0,0,10">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Drinks</x:String>
@@ -16,8 +31,19 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Switch x:Name="AvailableSwitch" IsToggled="True" Margin="0,0,0,10"/>
-        <Button Text="Add" Clicked="OnAddItemClicked"  BackgroundColor="SkyBlue" TextColor="White" WidthRequest="150"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Available" />
+            <Switch Grid.Column = "1" x:Name="AvailableSwitch" IsToggled="True" />
+        </Grid>
+        <Button Text="Add" 
+                Clicked="OnAddItemClicked"  
+                BackgroundColor="Green" 
+                TextColor="White" 
+                WidthRequest="150"/>
     </StackLayout>
 
 </ContentPage>

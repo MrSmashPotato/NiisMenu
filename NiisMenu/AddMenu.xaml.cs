@@ -22,7 +22,9 @@ namespace NiisMenu
                    Name = NameEntry.Text,
                    Price = Convert.ToInt32(PriceEntry.Text),
                    Category = CategoryPicker.SelectedItem.ToString(),
-                   IsAvailable = AvailableSwitch.IsToggled
+                   IsAvailable = AvailableSwitch.IsToggled,
+                   Date = DateOnly.FromDateTime(DateTime.Now).ToString(),
+                   Time = TimeOnly.FromDateTime(DateTime.Now).ToString()
                 };
 
                 await CrossCloudFirestore.Current

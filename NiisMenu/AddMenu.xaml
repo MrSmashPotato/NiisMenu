@@ -6,11 +6,21 @@
              BackgroundColor="Beige">
 
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
-        <Entry Placeholder="Name" x:Name="NameEntry" 
+        <!-- Image view to display selected image preview -->
+        <Image x:Name="ImagePreview" 
+               Aspect="AspectFit" 
+               HeightRequest="200"
+               Margin="0,0,0,20" />
+
+        <!-- Entry for Name -->
+        <Entry Placeholder="Name" 
+               x:Name="NameEntry" 
                BackgroundColor="LightGray" 
                TextColor="Black" 
                WidthRequest="200" 
                Margin="0,0,0,10"/>
+
+        <!-- Entry for Price -->
         <Entry Placeholder="Price" 
                x:Name="PriceEntry" 
                Keyboard="Numeric" 
@@ -18,6 +28,8 @@
                TextColor="Black" 
                WidthRequest="200" 
                Margin="0,0,0,10"/>
+
+        <!-- Picker for Category -->
         <Picker x:Name="CategoryPicker" 
                 Title="Category"
                 BackgroundColor="LightGray"
@@ -31,14 +43,26 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+
+        <!-- Grid for Available switch -->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Text="Available" />
-            <Switch Grid.Column = "1" x:Name="AvailableSwitch" IsToggled="True" />
+            <Switch Grid.Column="1" x:Name="AvailableSwitch" IsToggled="True" />
         </Grid>
+
+        <!-- Button to select an image -->
+        <Button Text="Select Image" 
+                Clicked="OnSelectImageButtonClicked"  
+                BackgroundColor="Blue" 
+                TextColor="White" 
+                WidthRequest="150"
+                Margin="0,20,0,10"/>
+
+        <!-- Button to add the menu item -->
         <Button Text="Add" 
                 Clicked="OnAddItemClicked"  
                 BackgroundColor="Green" 

@@ -8,6 +8,7 @@ public partial class ListMenu : ContentPage
 	public ListMenu()
 	{
 		InitializeComponent();
+        CategoryPicker.SelectedIndexChanged += async (sender, e) => await LoadMenuItem();
         MessagingCenter.Subscribe<UpdateMenu>(this, "DataUpdated", (sender) =>
         {
             // Call the method to reload the data
@@ -20,7 +21,7 @@ public partial class ListMenu : ContentPage
         LoadMenuItem();
     }
 
-    private async void LoadMenuItem()
+    private async Task LoadMenuItem()
     {
         List<Menu> memuItems = await GetMenuItemsAsync();
         MenuListView.ItemsSource = memuItems;
@@ -31,17 +32,33 @@ public partial class ListMenu : ContentPage
     {
         List<Menu> menuItems = new List<Menu>();
 
-        var querySnapshot = await CrossCloudFirestore.Current
+        if (CategoryPicker.SelectedItem != null)
+        {
+            var querySnapshot = await CrossCloudFirestore.Current
+                                                          .Instance
+                                                          .Collection("Menu")
+                                                          .WhereEqualsTo("Category", CategoryPicker.SelectedItem.ToString())
+                                                          .GetAsync();
+            foreach (var document in querySnapshot.Documents)
+            {
+                Menu menu = document.ToObject<Menu>();
+                menuItems.Add(menu);
+            }
+
+        }
+        else
+        {
+            var querySnapshot = await CrossCloudFirestore.Current
                                                       .Instance
                                                       .Collection("Menu")
-                                                      
                                                       .GetAsync();
-
-        foreach (var document in querySnapshot.Documents)
-        {
-            Menu menu = document.ToObject<Menu>();
-            menuItems.Add(menu);
+            foreach (var document in querySnapshot.Documents)
+            {
+                Menu menu = document.ToObject<Menu>();
+                menuItems.Add(menu);
+            }
         }
+        
 
         return menuItems;
     }

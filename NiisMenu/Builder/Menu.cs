@@ -14,5 +14,6 @@ namespace NiisMenu.Builder
         public bool IsAvailable { get; set; }
         public string Date{ get; set; }
         public string Time { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

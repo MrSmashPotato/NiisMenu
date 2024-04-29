@@ -4,10 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:NiisMenu"
-    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutBehavior="Flyout"
     Title="NiisMenu">
 
-    <FlyoutItem Title="DashBoad" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
@@ -20,10 +19,14 @@
                 Icon="caticon.png"/>
         <ShellContent
             Title="CustomerPage"
+            ContentTemplate="{DataTemplate local:CustomerPage}"
+            Route="CustomerPage" 
+                Icon="caticon.png"/>
+        <ShellContent
+            Title="ListMenu"
             ContentTemplate="{DataTemplate local:ListMenu}"
             Route="ListMenu" 
-                Icon="caticon.png"/>
-    </FlyoutItem>
+            Icon="gals.png"/>
 
 
 </Shell>

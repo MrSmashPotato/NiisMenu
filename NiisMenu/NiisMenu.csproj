@@ -59,6 +59,7 @@
 	<ItemGroup>
 	  <None Remove="Platforms\Android\google-services.json" />
 	  <None Remove="Resources\Images\caticon.jpg" />
+	  <None Remove="Resources\Images\gals.jpg" />
 	  <None Remove="Resources\niismenu.json" />
 	</ItemGroup>
 
@@ -71,6 +72,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.21" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
+		<PackageReference Include="Plugin.FirebaseStorage" Version="4.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>

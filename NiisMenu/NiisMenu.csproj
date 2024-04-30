@@ -77,22 +77,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddMenu.xaml">
+	  <MauiXaml Update="AdminPages\AddMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="AdminPage.xaml">
+	  <MauiXaml Update="AdminPages\AdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="CustomerPage.xaml">
+	  <MauiXaml Update="CustomerPages\CustomerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="ListMenu.xaml">
+	  <MauiXaml Update="AdminPages\ListMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="LogInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="UpdateMenu.xaml">
+	  <MauiXaml Update="AdminPages\PendingOrder.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AdminPages\UpdateMenu.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

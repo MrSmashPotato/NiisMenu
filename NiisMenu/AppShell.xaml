@@ -46,6 +46,11 @@
             ContentTemplate="{DataTemplate local:ListMenu}"
             Route="ListMenu" 
             Icon="gals.png"/>
+        <ShellContent
+            Title="PendingOrder"
+            ContentTemplate="{DataTemplate local:PendingOrder}"
+            Route="PendingOrder" 
+            Icon="gals.png"/>
 
     </FlyoutItem>
 

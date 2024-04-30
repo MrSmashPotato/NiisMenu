@@ -1,4 +1,4 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.CustomerPage"
              Title="Place Your Order">
@@ -36,15 +36,15 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Image Source="{Binding ImageUrl}" 
-                                   HeightRequest="200"
-                                   WidthRequest="200"
+                                   HeightRequest="150"
+                                   WidthRequest="150"
                                    Aspect="AspectFit" />
                             <StackLayout Grid.Column="1" 
                                          Padding="20">
                                 <Label Text="{Binding Name}"
                                        FontSize="25" 
-                                       FontAttributes="Italic" />
-                                <Label Text="{Binding Price,StringFormat='?{0:F2}'}"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding Price,StringFormat='₱{0:F2}'}"
                                        FontSize="20" 
                                        FontAttributes="Bold" ></Label>
                                 <Button Text="Order" 
@@ -53,8 +53,6 @@
                                         HorizontalOptions="End" 
                                         CornerRadius="30"
                                         WidthRequest="100"/> 
-                                
-
                             </StackLayout>
                         </Grid>
                     </ViewCell>

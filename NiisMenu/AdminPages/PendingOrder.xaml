@@ -1,0 +1,64 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="NiisMenu.PendingOrder"
+             Title="PendingOrder">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="OrderItemStyle" TargetType="StackLayout">
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="Spacing" Value="10"/>
+            </Style>
+            <Style x:Key="OrderItemTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"/>
+                <!-- Increased font size -->
+            </Style>
+            <Style x:Key="OrderItemButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="20"/>
+                <!-- Increased font size -->
+                <Setter Property="WidthRequest" Value="100"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <!-- Bind to a collection of orders -->
+                <ListView x:Name="ItemListView"
+                          RowHeight="150"
+                          SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Style="{StaticResource OrderItemStyle}">
+                                    <!-- Apply the style -->
+                                    <!-- Order Details -->
+                                    <StackLayout>
+                                        <Label Text="{Binding TableNumber}" FontSize ="20"></Label>
+                                        <Label Text="{Binding MenuName}" FontSize="20"/>
+                                        <!-- Increased font size -->
+                                        <Label Text="{Binding Price}" FontSize="20"/>
+                                        <!-- Increased font size -->
+                                    </StackLayout>
+                                    <!-- Button to mark order as done -->
+                                    <Button Text="Mark Done"
+                                            FontSize="20"
+                                            Command="{Binding MarkDoneCommand}"
+                                            CommandParameter="{Binding .}"
+                                            Style="{StaticResource OrderItemButtonStyle}" Clicked="DoneClicked"
+                                            />
+                                    <!-- Apply the style -->
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

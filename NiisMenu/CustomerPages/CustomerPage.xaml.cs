@@ -89,7 +89,7 @@ namespace NiisMenu
                 // Add the order to the database
                 await CrossCloudFirestore.Current
                     .Instance
-                    .Collection("Order")
+                    .Collection("PendingOrder")
                     .AddAsync(newOrder);
 
                 // Display success message

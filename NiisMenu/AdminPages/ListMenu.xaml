@@ -5,7 +5,11 @@
              Title="ListMenu">
     <StackLayout>
         <StackLayout>
-            <Picker x:Name="CategoryPicker"  Title="Choose category" BackgroundColor="White" TextColor="Black" WidthRequest="200" Margin="0,0,0,10">
+            <Picker x:Name="CategoryPicker" 
+                    Title="Choose category"
+                    BackgroundColor="White" 
+                    TextColor="Black" 
+                    WidthRequest="200" Margin="0,0,0,10">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Drinks</x:String>

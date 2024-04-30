@@ -1,0 +1,48 @@
+<Shell x:Class="NiisMenu.AdminPages.AdminShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:NiisMenu"
+       Shell.FlyoutBehavior="Flyout"
+       Shell.TabBarIsVisible="False"
+       Shell.BackgroundColor ="Black"
+       Shell.TitleColor="White"
+       Title="Admin Shell">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Image Source="logo.png" WidthRequest="100"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <Image Source="logo.png" WidthRequest="100"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
+
+    <!-- Add log out button in the header -->
+    <Shell.ToolbarItems>
+        <ToolbarItem Text="Log Out" Clicked ="OnLogOutClicked" />
+    </Shell.ToolbarItems>
+
+    <FlyoutItem Title="Home" 
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="AdminPage"
+                      ContentTemplate="{DataTemplate local:AdminPage}"
+                      Route="AdminPage" 
+                      Icon="bern.png"/>
+        <ShellContent Title="AddMenu"
+                      ContentTemplate="{DataTemplate local:AddMenu}"
+                      Route="AddMenu" 
+                      Icon="caticon.png"/>
+        <ShellContent Title="ListMenu"
+                      ContentTemplate="{DataTemplate local:ListMenu}"
+                      Route="ListMenu" 
+                      Icon="gals.png"/>
+        <ShellContent Title="PendingOrder"
+                      ContentTemplate="{DataTemplate local:PendingOrder}"
+                      Route="PendingOrder" 
+                      Icon="gals.png"/>
+    </FlyoutItem>
+</Shell>

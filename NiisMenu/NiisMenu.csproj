@@ -83,6 +83,9 @@
 	  <MauiXaml Update="AdminPages\AdminPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="AdminPages\AdminShell.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="CustomerPages\CustomerPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

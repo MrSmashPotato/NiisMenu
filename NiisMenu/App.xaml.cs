@@ -1,4 +1,5 @@
-﻿namespace NiisMenu
+﻿
+namespace NiisMenu
 {
     public partial class App : Application
     {

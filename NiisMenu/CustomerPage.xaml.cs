@@ -18,6 +18,11 @@ namespace NiisMenu
             CategoryPicker.SelectedIndexChanged += async (sender, e) => await LoadMenuItems();
             menuDatabase = new DatabaseHandler();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadMenuItems();
+        }
 
         private async Task LoadMenuItems()
         {

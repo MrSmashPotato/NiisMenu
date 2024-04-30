@@ -20,9 +20,15 @@ namespace NiisMenu
 
             existingImageUrl = selectedMenu.ImageUrl; // Assign selectedMenu's ImageUrl to existingImageUrl
         }
-
+        private bool isButtonEnabled = true;
         private async void OnUpdateItemClicked(object sender, EventArgs e)
         {
+            if (!isButtonEnabled)
+            {
+                // Button is disabled, return
+                return;
+            }
+            isButtonEnabled = false;
             try
             {
                 Menu Newmenu = new Menu
@@ -60,10 +66,20 @@ namespace NiisMenu
             {
                 await DisplayAlert("Error", ex.Message, "OK");
             }
+            finally
+            {
+                isButtonEnabled = true;
+            }
         }
 
         private async void OnDeleteItemClicked(object sender, EventArgs e)
         {
+            if (!isButtonEnabled)
+            {
+                // Button is disabled, return
+                return;
+            }
+            isButtonEnabled = false;
             try
             {
                 var confirmDelete = await DisplayAlert("Confirm", "Are you sure you want to delete this menu item?", "Yes", "No");
@@ -94,6 +110,10 @@ namespace NiisMenu
             catch (Exception ex)
             {
                 await DisplayAlert("Error", ex.Message, "OK");
+            }
+            finally
+            {
+                isButtonEnabled = true;
             }
         }
     }

@@ -17,6 +17,7 @@ namespace NiisMenu.Database
                 .Instance
                 .Collection("Menu")
                 .WhereEqualsTo("Category", category)
+                .WhereEqualsTo("IsAvailable",true)
                 .GetAsync();
 
             foreach (var document in querySnapshot.Documents)

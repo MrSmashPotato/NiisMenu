@@ -3,8 +3,15 @@
              x:Class="NiisMenu.CustomerPage"
              Title="Place Your Order">
     <StackLayout>
-        <StackLayout>
-            <Picker x:Name="CategoryPicker" Title="Choose category" BackgroundColor="White" TextColor="Black" WidthRequest="200">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Sort:" VerticalOptions="Center" FontSize="22"/>
+            <Picker x:Name="CategoryPicker" 
+                    Title="Choose category" 
+                    BackgroundColor="White" 
+                    TextColor="Black" 
+                    WidthRequest="200"
+                    HeightRequest="50"
+                    FontSize="22">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Drinks</x:String>
@@ -28,12 +35,26 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Aspect="AspectFit" />
+                            <Image Source="{Binding ImageUrl}" 
+                                   HeightRequest="200"
+                                   WidthRequest="200"
+                                   Aspect="AspectFit" />
                             <StackLayout Grid.Column="1" 
-                                         Padding="10">
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Italic" />
-                                <Label Text="{Binding Price}" FontSize="22" FontAttributes="Bold" />
-                                <Button Text="Order" Clicked="OrderButton_Clicked" CommandParameter="{Binding .}" HorizontalOptions="End" />
+                                         Padding="20">
+                                <Label Text="{Binding Name}"
+                                       FontSize="25" 
+                                       FontAttributes="Italic" />
+                                <Label Text="{Binding Price,StringFormat='?{0:F2}'}"
+                                       FontSize="20" 
+                                       FontAttributes="Bold" ></Label>
+                                <Button Text="Order" 
+                                        Clicked="OrderButton_Clicked"
+                                        CommandParameter="{Binding .}" 
+                                        HorizontalOptions="End" 
+                                        CornerRadius="30"
+                                        WidthRequest="100"/> 
+                                
+
                             </StackLayout>
                         </Grid>
                     </ViewCell>

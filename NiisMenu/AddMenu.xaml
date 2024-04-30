@@ -60,14 +60,16 @@
                 BackgroundColor="Blue" 
                 TextColor="White" 
                 WidthRequest="150"
-                Margin="0,20,0,10"/>
+                Margin="0,20,0,10"
+                CornerRadius="30"/>
 
         <!-- Button to add the menu item -->
         <Button Text="Add" 
                 Clicked="OnAddItemClicked"  
                 BackgroundColor="Green" 
                 TextColor="White" 
-                WidthRequest="150"/>
+                WidthRequest="150"
+                CornerRadius="30"/>
     </StackLayout>
 
 </ContentPage>

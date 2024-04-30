@@ -3,17 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.LoginPage"
              Title="Login"
-             BackgroundColor="SkyBlue">
+             BackgroundColor="WhiteSmoke">
 
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
-        <Frame BackgroundColor="White" CornerRadius="10" Padding="10">
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand" 
+                 Padding="20">
+        <Frame BackgroundColor="White"
+               CornerRadius="10" 
+               Padding="10">
             <StackLayout>
-                <Label Text="Login" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
-                <Entry Placeholder="Username" x:Name="UsernameEntry" BackgroundColor="White" TextColor="Black" WidthRequest="200"/>
-                <Entry Placeholder="Password" IsPassword="True" x:Name="PasswordEntry" BackgroundColor="White" TextColor="Black" WidthRequest="200"/>
+                <Label Text="Login" 
+                       FontSize="Large"
+                       TextColor="Black" 
+                       HorizontalOptions="Center"/>
+                <Entry Placeholder="Username" 
+                       x:Name="UsernameEntry" 
+                       BackgroundColor="White" 
+                       TextColor="Black" 
+                       WidthRequest="200"/>
+                <Entry Placeholder="Password"
+                       IsPassword="True" 
+                       x:Name="PasswordEntry" 
+                       BackgroundColor="White" 
+                       TextColor="Black" 
+                       WidthRequest="200"/>
             </StackLayout>
         </Frame>
-        <Button Text="Login" Clicked="OnLoginClicked" BackgroundColor="Red" TextColor="White" WidthRequest="150"/>
+        <Button Text="Login" 
+                Clicked="OnLoginClicked" 
+                BackgroundColor="Red"
+                TextColor="White" 
+                WidthRequest="150"/>
     </StackLayout>
 
 </ContentPage>

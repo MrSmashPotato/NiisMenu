@@ -63,9 +63,27 @@ public partial class ListMenu : ContentPage
         return menuItems;
     }
 
+    private bool isbuttonEnabled = true;
     private void MenuListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        var selectedMenu = (Menu)e.SelectedItem;
-        Navigation.PushAsync(new UpdateMenu(selectedMenu));
+        if (!isbuttonEnabled)
+        {
+            return;
+        }
+        isbuttonEnabled = false;
+        try 
+        {
+
+            var selectedMenu = (Menu)e.SelectedItem;
+            Navigation.PushAsync(new UpdateMenu(selectedMenu));
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", ex.Message, "OK");
+        }
+        finally
+        {
+            isbuttonEnabled = true;
+        }
     }
 }

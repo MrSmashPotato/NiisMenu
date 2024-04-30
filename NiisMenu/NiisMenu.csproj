@@ -60,6 +60,7 @@
 	  <None Remove="Platforms\Android\google-services.json" />
 	  <None Remove="Resources\Images\caticon.jpg" />
 	  <None Remove="Resources\Images\gals.jpg" />
+	  <None Remove="Resources\Images\logo.jpg" />
 	  <None Remove="Resources\niismenu.json" />
 	</ItemGroup>
 

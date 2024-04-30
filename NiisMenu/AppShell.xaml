@@ -5,28 +5,49 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:NiisMenu"
     Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    Shell.BackgroundColor="black"
+    Shell.TitleColor="white"
     Title="NiisMenu">
+    
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Image Source="logo.png" WidthRequest="100"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout>
+            <Image Source="logo.png" WidthRequest="100"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
 
+    <FlyoutItem Title="Home" 
+                FlyoutDisplayOptions="AsMultipleItems">
+       
         <ShellContent
-            Title="Home"
+            Title="MainPage"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" 
-                Icon = "bern.png" />   
+            Icon = "bern.png"/>   
         <ShellContent
             Title="AddMenu"
             ContentTemplate="{DataTemplate local:AddMenu}"
             Route="AddMenu" 
-                Icon="caticon.png"/>
+            Icon="caticon.png"/>
         <ShellContent
             Title="CustomerPage"
             ContentTemplate="{DataTemplate local:CustomerPage}"
             Route="CustomerPage" 
-                Icon="caticon.png"/>
+            Icon="caticon.png"/>
         <ShellContent
             Title="ListMenu"
             ContentTemplate="{DataTemplate local:ListMenu}"
             Route="ListMenu" 
             Icon="gals.png"/>
+
+    </FlyoutItem>
 
 
 </Shell>

@@ -15,46 +15,72 @@ namespace NiisMenu
         {
             InitializeComponent();
         }
-
+        private bool isBottonEnabled = true;
         private async void OnAddItemClicked(object sender, EventArgs e)
         {
+            if (!isBottonEnabled)
+            {
+                return;
+            }
+            isBottonEnabled = false;
             try
             {
-                // Upload image to Firebase Storage if imageData is not null
-                string imageUrl = null;
-                if (imageData != null)
+                var querySnapshot = await CrossCloudFirestore.Current
+            .Instance
+            .Collection("Menu")
+            .WhereEqualsTo("Name", NameEntry.Text)
+            .GetAsync();
+                if (querySnapshot.Count > 0)
                 {
-                    // Generate a unique filename for the image
-                    string imageName = Guid.NewGuid().ToString();
-                    string imagePath = $"images/{imageName}.jpg";
-
-                    // Upload image to Firebase Storage
-                    imageUrl = await UploadImage(imageData, imagePath);
+                    await DisplayAlert("Error", "Menu item already exists", "OK");
+                    return;
                 }
-
-                // Create a new Menu object with the provided details
-                Menu newMenu = new Menu
+                try
                 {
-                    Name = NameEntry.Text,
-                    Price = Convert.ToInt32(PriceEntry.Text),
-                    Category = CategoryPicker.SelectedItem.ToString(),
-                    IsAvailable = AvailableSwitch.IsToggled,
-                    Date = DateTime.UtcNow.ToString(), // Use UTC time to ensure consistency across devices
-                    ImageUrl = imageUrl // Save the image URL in the menu object
-                };
+                    // Upload image to Firebase Storage if imageData is not null
+                    string imageUrl = null;
+                    if (imageData != null)
+                    {
+                        // Generate a unique filename for the image
+                        string imageName = Guid.NewGuid().ToString();
+                        string imagePath = $"images/{imageName}.jpg";
 
-                // Add the new menu item to Firestore
-                await CrossCloudFirestore.Current
-                    .Instance
-                    .Collection("Menu")
-                    .AddAsync(newMenu);
+                        // Upload image to Firebase Storage
+                        imageUrl = await UploadImage(imageData, imagePath);
+                    }
 
-                await DisplayAlert("Success", "Menu item added successfully", "OK");
-                ClearFields();
+                    // Create a new Menu object with the provided details
+                    Menu newMenu = new Menu
+                    {
+                        Name = NameEntry.Text,
+                        Price = Convert.ToInt32(PriceEntry.Text),
+                        Category = CategoryPicker.SelectedItem.ToString(),
+                        IsAvailable = AvailableSwitch.IsToggled,
+                        Date = DateTime.UtcNow.ToString(), // Use UTC time to ensure consistency across devices
+                        ImageUrl = imageUrl // Save the image URL in the menu object
+                    };
+
+                    // Add the new menu item to Firestore
+                    await CrossCloudFirestore.Current
+                        .Instance
+                        .Collection("Menu")
+                        .AddAsync(newMenu);
+
+                    await DisplayAlert("Success", "Menu item added successfully", "OK");
+                    ClearFields();
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", ex.Message, "OK");
+                }
             }
             catch (Exception ex)
             {
                 await DisplayAlert("Error", ex.Message, "OK");
+            }
+            finally
+            {
+                isBottonEnabled = true;
             }
         }
 

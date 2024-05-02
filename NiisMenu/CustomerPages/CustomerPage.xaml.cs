@@ -17,6 +17,21 @@ namespace NiisMenu
             InitializeComponent();
             CategoryPicker.SelectedIndexChanged += async (sender, e) => await LoadMenuItems();
             menuDatabase = new DatabaseHandler();
+            CrossCloudFirestore.Current
+                .Instance
+                .Collection("Menu")
+                .AddSnapshotListener((snapshot, error) =>
+                {
+                    if (snapshot != null && !snapshot.IsEmpty)
+                    {
+                        // Reload pending orders when there's a change in the database
+                        LoadMenuItems();
+                    }
+                    else if (error != null)
+                    {
+                        Console.WriteLine($"Error listening for updates: {error}");
+                    }
+                });
         }
         protected override void OnAppearing()
         {
@@ -87,9 +102,8 @@ namespace NiisMenu
                     MenuName = menuItem.Name,
                     Quantity = tempQuantity,
                     Price = totalPrice,
-                    Date = DateOnly.FromDateTime(DateTime.Now).ToString(),
-                    Time = TimeOnly.FromDateTime(DateTime.Now).ToString()
-                };
+                    TimeStamp = DateTime.UtcNow.ToString()
+            };
 
                 // Add the order to the database
                 await CrossCloudFirestore.Current

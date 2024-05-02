@@ -2,20 +2,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.CustomerPage"
              Title="Place Your Order">
+    
+    
     <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label Text="Sort:" VerticalOptions="Center" FontSize="22"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+            <Label Text="Sort:" VerticalOptions="Center" FontSize="15" Padding="20"/>
             <Picker x:Name="CategoryPicker" 
                     Title="All Menu" 
                     BackgroundColor="White" 
                     TextColor="Black" 
-                    WidthRequest="200"
+                    WidthRequest="100"
                     HeightRequest="50"
-                    FontSize="22">
+                    FontSize="15">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Drinks</x:String>
                         <x:String>Food</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Text="Table No." VerticalOptions="Center" FontSize="15" Padding="10"/>
+            <Picker x:Name="TableNumberPicker" 
+                    Title="All Menu" 
+                    BackgroundColor="White" 
+                    TextColor="Black" 
+                    WidthRequest="30"
+                    HeightRequest="50"
+                    FontSize="15">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
@@ -24,40 +46,55 @@
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand"
                   RowHeight="150"
-                  SelectionMode="None">
+                  SelectionMode="None"
+                  SeparatorVisibility="Default" SeparatorColor="Transparent" BackgroundColor="WhiteSmoke"
+                  >
             <!-- Here you will bind the ListView's ItemsSource property to the data source in your code-behind -->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <!-- Define your item template here -->
                         <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImageUrl}" 
+                            <Image Grid.Row="0" Grid.Column="0"
+                                    Source="{Binding ImageUrl}" 
                                    HeightRequest="150"
                                    WidthRequest="150"
-                                   Aspect="AspectFit" />
-                            <StackLayout Grid.Column="1" 
-                                         Padding="20">
+                                   Aspect="Fill" />
+                            <StackLayout  Padding="10" Grid.Row="0" Grid.Column="1">
                                 <Label Text="{Binding Name}"
                                        FontSize="25" 
+                                        HorizontalOptions="Center"
                                        FontAttributes="Bold"/>
                                 <Label Text="{Binding Price,StringFormat='₱{0:F2}'}"
                                        FontSize="20" 
+                                        HorizontalOptions="Center"
                                        FontAttributes="Bold" ></Label>
                                 <Button Text="Order" 
                                         Clicked="OrderButton_Clicked"
                                         CommandParameter="{Binding .}" 
-                                        HorizontalOptions="End" 
+                                        HorizontalOptions="Center" 
                                         CornerRadius="30"
-                                        WidthRequest="100"/> 
+                                        WidthRequest="100"/>
+
                             </StackLayout>
                         </Grid>
+
                     </ViewCell>
+                    
                 </DataTemplate>
+                
             </ListView.ItemTemplate>
+
         </ListView>
+        
     </StackLayout>
 </ContentPage>

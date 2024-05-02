@@ -24,6 +24,11 @@
     </Shell.FlyoutFooter>
     <FlyoutItem Title="Home" 
             FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Pending Order"
+            ContentTemplate="{DataTemplate local:PendingOrder}"
+            Route="PendingOrder" 
+            Icon = "bern.png"/> 
 
         <ShellContent
              Title="CustomerPage"
@@ -35,7 +40,8 @@
             ContentTemplate="{DataTemplate local:LoginPage}"
             Route="LoginPage" 
             Icon = "bern.png"/>
-       
+        
+
     </FlyoutItem>
 
 

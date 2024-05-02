@@ -23,7 +23,8 @@ namespace NiisMenu.Database
                 Menu menu = document.ToObject<Menu>();
                 menuItems.Add(menu);
             }
-            return menuItems;
+            List<Menu> sortedItem = menuItems.OrderBy(Menu => Menu.Name).ToList();
+            return sortedItem;
         }
         public async Task<List<Menu>> GetMenuItems(string category)
         {
@@ -40,8 +41,9 @@ namespace NiisMenu.Database
                     Menu menu = document.ToObject<Menu>();
                     menuItems.Add(menu);
                 }
-            
-            return menuItems;
+
+            List<Menu> sortedItem = menuItems.OrderBy(Menu => Menu.Name).ToList();
+            return sortedItem;
         }
     }
 }

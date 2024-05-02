@@ -12,8 +12,7 @@ namespace NiisMenu
         public string MenuName { get; set; }
         public int Quantity { get; set; }
         public int Price { get; set; }
-        public string Date { get; set; }
-        public string Time { get; set; }
+        public string TimeStamp { get; set; }
 
     }
 }

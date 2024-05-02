@@ -41,6 +41,7 @@ namespace NiisMenu
             var querySnapshot = await CrossCloudFirestore.Current
                 .Instance
                 .Collection("PendingOrder")
+                .OrderBy("TimeStamp")
                 .GetAsync();
             foreach (var document in querySnapshot.Documents)
             {

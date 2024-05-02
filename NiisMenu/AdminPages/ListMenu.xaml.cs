@@ -58,9 +58,9 @@ public partial class ListMenu : ContentPage
                 menuItems.Add(menu);
             }
         }
-        
 
-        return menuItems;
+        List<Menu> sortedItem = menuItems.OrderBy(Menu => Menu.Name).ToList();
+        return sortedItem;
     }
 
     private bool isbuttonEnabled = true;

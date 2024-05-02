@@ -27,6 +27,11 @@ namespace NiisMenu
         private async Task LoadMenuItems()
         {
             string selectedCategory = CategoryPicker.SelectedItem as string;
+            if (selectedCategory == null)
+            {
+                List<Menu> menuItems = await menuDatabase.GetMenuItems();
+                MenuListView.ItemsSource = menuItems;
+            }
 
             if (selectedCategory != null)
             {

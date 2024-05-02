@@ -6,7 +6,7 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
             <Label Text="Sort:" VerticalOptions="Center" FontSize="22"/>
             <Picker x:Name="CategoryPicker" 
-                    Title="Choose category" 
+                    Title="All Menu" 
                     BackgroundColor="White" 
                     TextColor="Black" 
                     WidthRequest="200"

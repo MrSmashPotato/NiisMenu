@@ -28,6 +28,10 @@
 
     <FlyoutItem Title="Home" 
                 FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="PendingOrder"
+              ContentTemplate="{DataTemplate local:PendingOrder}"
+              Route="PendingOrder" 
+              Icon="gals.png"/>
         <ShellContent Title="AdminPage"
                       ContentTemplate="{DataTemplate local:AdminPage}"
                       Route="AdminPage" 
@@ -40,9 +44,6 @@
                       ContentTemplate="{DataTemplate local:ListMenu}"
                       Route="ListMenu" 
                       Icon="gals.png"/>
-        <ShellContent Title="PendingOrder"
-                      ContentTemplate="{DataTemplate local:PendingOrder}"
-                      Route="PendingOrder" 
-                      Icon="gals.png"/>
+        
     </FlyoutItem>
 </Shell>

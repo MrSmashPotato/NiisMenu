@@ -23,7 +23,7 @@
             </Picker>
             <Label Text="Table No." VerticalOptions="Center" FontSize="15" Padding="10"/>
             <Picker x:Name="TableNumberPicker" 
-                    Title="All Menu" 
+                    Title="#" 
                     BackgroundColor="White" 
                     TextColor="Black" 
                     WidthRequest="30"
@@ -95,6 +95,15 @@
             </ListView.ItemTemplate>
 
         </ListView>
-        
+        <StackLayout>
+            <Frame>
+                <Button Text="Add Song"
+                        BackgroundColor="Green"
+                        HeightRequest="60" 
+                        Clicked="SongClicked"></Button>
+            </Frame>
+            
+        </StackLayout>
+
     </StackLayout>
 </ContentPage>

@@ -3,12 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.LoginPage"
              Title="Login"
-             BackgroundColor="WhiteSmoke">
+             BackgroundColor="White">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <VerticalStackLayout>
+        <Image Source="logo.png" WidthRequest="150"></Image>
+        <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+    </VerticalStackLayout>  
 
     <StackLayout VerticalOptions="CenterAndExpand"
                  HorizontalOptions="CenterAndExpand" 
                  Padding="20">
-        <Frame BackgroundColor="White"
+        
+            
+
+            <Frame BackgroundColor="White"
                CornerRadius="10" 
                Padding="10">
             <StackLayout>
@@ -29,11 +37,16 @@
                        WidthRequest="200"/>
             </StackLayout>
         </Frame>
-        <Button Text="Login" 
-                Clicked="OnLoginClicked" 
-                BackgroundColor="Red"
-                TextColor="White" 
-                WidthRequest="150"/>
+            <StackLayout Padding="30">
+                <Button Text="Login" 
+                    Clicked="OnLoginClicked" 
+                    BackgroundColor="Green"
+                    TextColor="White" 
+                    WidthRequest="150"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+        
+    </StackLayout>
     </StackLayout>
 
 </ContentPage>

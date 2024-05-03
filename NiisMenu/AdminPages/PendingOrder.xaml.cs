@@ -43,12 +43,15 @@ namespace NiisMenu
                 .Collection("PendingOrder")
                 .OrderBy("TimeStamp")
                 .GetAsync();
-            foreach (var document in querySnapshot.Documents)
-            {
-                EditOrder neworder = document.ToObject<EditOrder>();
-                neworder.OrderID = document.Id;
-                pendingOrders.Add(neworder);
-            }
+            
+                foreach (var document in querySnapshot.Documents)
+                {
+                    EditOrder neworder = document.ToObject<EditOrder>();
+                    neworder.OrderID = document.Id;
+                    pendingOrders.Add(neworder);
+                }
+            
+
             return pendingOrders;
         }
         private bool isButtonEnabled = true;
@@ -92,7 +95,7 @@ namespace NiisMenu
             {
                 isButtonEnabled = true;
             }
-            
+            LoadPendingOrders();
         }
     }
 }

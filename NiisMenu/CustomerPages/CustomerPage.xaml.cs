@@ -72,7 +72,11 @@ namespace NiisMenu
             try
             {
                 var menuItem = (Menu)((Button)sender).CommandParameter;
-
+                if(TableNumberPicker.SelectedItem == null)
+                {
+                    await DisplayAlert("Error", "Please select a table number","OK");
+                    return;
+                }
                 // Prompt the user for the quantity
                 string quantityInput = await DisplayPromptAsync("Order Quantity", "Enter the quantity:", initialValue: "", maxLength: 3, keyboard: Keyboard.Numeric);
 
@@ -98,12 +102,12 @@ namespace NiisMenu
                 // Create the order
                 Order newOrder = new Order
                 {
-                    TableNumber = 1,
+                    TableNumber = TableNumberPicker.SelectedItem.ToString(),
                     MenuName = menuItem.Name,
                     Quantity = tempQuantity,
                     Price = totalPrice,
                     TimeStamp = DateTime.UtcNow.ToString()
-            };
+                };
 
                 // Add the order to the database
                 await CrossCloudFirestore.Current
@@ -121,8 +125,13 @@ namespace NiisMenu
             finally
             {
                 ButtonEnabled = true;
-            }          
+            }
+            TableNumberPicker.SelectedItem = null;
         }
 
+        private void SongClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

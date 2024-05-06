@@ -2,8 +2,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             x:Class="NiisMenu.PendingOrder"
-             Title="PendingOrder">
+             x:Class="NiisMenu.PendingOrder" 
+             Title="Pending Orders">
 
     <StackLayout>
         <!-- Bind to a collection of orders -->
@@ -28,22 +28,22 @@
 
                             <!-- Table Number -->
                             <Label Grid.Row="0" Grid.Column="0" 
-                        Text="Table No." 
-                        FontSize="20" />
+                                    Text="Table No." 
+                                    FontSize="20" />
                             <Label Grid.Row="0" Grid.Column="1" 
-                       Text="{Binding TableNumber}" 
-                       FontSize="20" FontAttributes="Bold"/>
+                                   Text="{Binding TableNumber}" 
+                                   FontSize="20" FontAttributes="Bold"/>
 
                             <!-- Menu Name -->
                             <Label Grid.Row="2" Grid.Column="0" 
-                       Text="{Binding MenuName}" 
-                       FontSize="20" />
+                                   Text="{Binding MenuName}" 
+                                   FontSize="20" />
 
                             <!-- Price -->
                             <Label Text="Total:" Grid.Row="3" Grid.Column="0" FontSize="20"/>
                             <Label Grid.Row="3" Grid.Column="1" 
-                       Text="{Binding Price,StringFormat='₱{0:F2}'}" 
-                       FontSize="20" />
+                                   Text="{Binding Price,StringFormat='₱{0:F2}'}" 
+                                   FontSize="20" />
 
                             <!-- Add another row here -->
                             <Label Text="Quantity:" Grid.Row="1" Grid.Column="0" FontSize="20"/>
@@ -53,15 +53,15 @@
 
                             <!-- Button to mark order as done -->
                             <Button Grid.Row="0" Grid.Column="3" Grid.RowSpan="4"
-                        Text="   Done   "
-                        FontSize="20"
-                        Command="{Binding MarkDoneCommand}"
-                        CommandParameter="{Binding .}"
-                        Clicked="DoneClicked" 
-                        HorizontalOptions="End"
-                        CornerRadius="90"
-                        BackgroundColor="Green"
-                        BorderColor="YellowGreen"/>
+                                    Text="   Done   "
+                                    FontSize="20"
+                                    Command="{Binding MarkDoneCommand}"
+                                    CommandParameter="{Binding .}"
+                                    Clicked="DoneClicked" 
+                                    HorizontalOptions="End"
+                                    CornerRadius="90"
+                                    BackgroundColor="Green"
+                                    BorderColor="YellowGreen"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

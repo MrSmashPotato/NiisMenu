@@ -58,9 +58,27 @@
 
 	<ItemGroup>
 	  <None Remove="Platforms\Android\google-services.json" />
+	  <None Remove="Resources\Fonts\LarosaBlack.ttf" />
+	  <None Remove="Resources\Fonts\LarosaBold.ttf" />
+	  <None Remove="Resources\Fonts\LarosaLight.ttf" />
+	  <None Remove="Resources\Fonts\LarosaMedium.ttf" />
+	  <None Remove="Resources\Fonts\LarosaRegular.ttf" />
+	  <None Remove="Resources\Fonts\LarosaThin.ttf" />
+	  <None Remove="Resources\Fonts\LarosaThinest.ttf" />
+	  <None Remove="Resources\Images\add.svg" />
+	  <None Remove="Resources\Images\addmenu.svg" />
 	  <None Remove="Resources\Images\caticon.jpg" />
+	  <None Remove="Resources\Images\drink1.svg" />
+	  <None Remove="Resources\Images\drink3.svg" />
 	  <None Remove="Resources\Images\gals.jpg" />
+	  <None Remove="Resources\Images\login.svg" />
+	  <None Remove="Resources\Images\login1.svg" />
 	  <None Remove="Resources\Images\logo.jpg" />
+	  <None Remove="Resources\Images\order.svg" />
+	  <None Remove="Resources\Images\orders1.svg" />
+	  <None Remove="Resources\Images\orders2.svg" />
+	  <None Remove="Resources\Images\orders3.svg" />
+	  <None Remove="Resources\Images\view.svg" />
 	  <None Remove="Resources\niismenu.json" />
 	</ItemGroup>
 
@@ -74,6 +92,7 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Plugin.CloudFirestore" Version="4.1.0" />
 		<PackageReference Include="Plugin.FirebaseStorage" Version="4.1.0" />
+		<PackageReference Include="Plugin.LocalNotification" Version="11.1.2" />
 	</ItemGroup>
 
 	<ItemGroup>

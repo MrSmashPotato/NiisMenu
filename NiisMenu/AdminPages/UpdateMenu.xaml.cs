@@ -1,8 +1,6 @@
-using System;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Storage;
 using NiisMenu.Builder;
 using Plugin.CloudFirestore;
+using Plugin.FirebaseStorage;
 
 namespace NiisMenu
 {
@@ -94,7 +92,6 @@ namespace NiisMenu
                     foreach (var documentSnapshot in querySnapshot.Documents)
                     {
                         var documentId = documentSnapshot.Id;
-
                         await CrossCloudFirestore.Current
                             .Instance
                             .Collection("Menu")
@@ -116,5 +113,7 @@ namespace NiisMenu
                 isButtonEnabled = true;
             }
         }
+        
+
     }
 }

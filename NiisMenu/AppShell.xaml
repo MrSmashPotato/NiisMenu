@@ -5,41 +5,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:NiisMenu"
     Shell.FlyoutBehavior="Flyout"
-    Shell.BackgroundColor="black"
+    Shell.BackgroundColor="Black"
     Shell.TabBarIsVisible="False"
     Shell.TitleColor="white"
     Title="NiisMenu">
 
     <Shell.FlyoutHeader>
-        <VerticalStackLayout>
-            <Image Source="logo.png" WidthRequest="100"></Image>
-            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        <VerticalStackLayout Padding="20">
+            <Image Source="logo.png" WidthRequest="130"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center" FontFamily="LarosaBlack"></Label>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
-    <Shell.FlyoutFooter>
-        <VerticalStackLayout>
-            <Image Source="logo.png" WidthRequest="100"></Image>
-            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
-        </VerticalStackLayout>
-    </Shell.FlyoutFooter>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".30*,.70*" RowDefinitions="*,*,*" RowSpacing="10" ColumnSpacing ="10">
+                <HorizontalStackLayout Grid.Row="0" Spacing="10" Padding="10">
+                    <Image Source="{Binding FlyoutIcon}" WidthRequest="50" HeightRequest="50"></Image>
+                    <Label Text="{Binding Title}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="LarosaBlack"></Label>
+                   
+                </HorizontalStackLayout>
+            </Grid>
+
+        </DataTemplate>
+    </Shell.ItemTemplate>
     <FlyoutItem Title="Home" 
             FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent
-            Title="Pending Order"
-            ContentTemplate="{DataTemplate local:PendingOrder}"
-            Route="PendingOrder" 
-            Icon = "bern.png"/> 
+       
 
-        <ShellContent
-             Title="CustomerPage"
+    <ShellContent
+             Title="Customer Page"
              ContentTemplate="{DataTemplate local:CustomerPage}"
              Route="CustomerPage" 
-             Icon = "bern.png"/>
+             Icon = "drink1.svg" />
         <ShellContent
             Title="LogIn"
             ContentTemplate="{DataTemplate local:LoginPage}"
             Route="LoginPage" 
-            Icon = "bern.png"/>
+            Icon = "login1.svg"/>
         
 
     </FlyoutItem>

@@ -5,9 +5,9 @@ namespace NiisMenu;
 
 public partial class ListMenu : ContentPage
 {
-	public ListMenu()
-	{
-		InitializeComponent();
+    public ListMenu()
+    {
+        InitializeComponent();
         CategoryPicker.SelectedIndexChanged += async (sender, e) => await LoadMenuItem();
         MessagingCenter.Subscribe<UpdateMenu>(this, "DataUpdated", (sender) =>
         {
@@ -31,7 +31,7 @@ public partial class ListMenu : ContentPage
     public async Task<List<Menu>> GetMenuItemsAsync()
     {
         List<Menu> menuItems = new List<Menu>();
-
+        
         if (CategoryPicker.SelectedItem != null)
         {
             var querySnapshot = await CrossCloudFirestore.Current
@@ -71,7 +71,7 @@ public partial class ListMenu : ContentPage
             return;
         }
         isbuttonEnabled = false;
-        try 
+        try
         {
 
             var selectedMenu = (Menu)e.SelectedItem;

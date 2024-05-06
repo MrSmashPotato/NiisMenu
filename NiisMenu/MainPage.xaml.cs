@@ -1,6 +1,4 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace NiisMenu
+﻿namespace NiisMenu
 {
     public partial class MainPage : ContentPage
     {

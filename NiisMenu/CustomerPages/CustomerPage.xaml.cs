@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-using Plugin.CloudFirestore;
 using NiisMenu.Builder;
 using NiisMenu.Database;
+using Plugin.CloudFirestore;
 
 namespace NiisMenu
 {
@@ -38,7 +34,11 @@ namespace NiisMenu
             base.OnAppearing();
             LoadMenuItems();
         }
-
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            TableNumberPicker.SelectedItem = null;
+        }
         private async Task LoadMenuItems()
         {
             string selectedCategory = CategoryPicker.SelectedItem as string;
@@ -55,10 +55,7 @@ namespace NiisMenu
             }
         }
 
-        private async void Refresh_Clicked(object sender, EventArgs e)
-        {
-            await LoadMenuItems();
-        }
+        
         private bool ButtonEnabled = true;
         private async void OrderButton_Clicked(object sender, EventArgs e)
         {
@@ -72,9 +69,9 @@ namespace NiisMenu
             try
             {
                 var menuItem = (Menu)((Button)sender).CommandParameter;
-                if(TableNumberPicker.SelectedItem == null)
+                if (TableNumberPicker.SelectedItem == null)
                 {
-                    await DisplayAlert("Error", "Please select a table number","OK");
+                    await DisplayAlert("Error", "Please select a table number", "OK");
                     return;
                 }
                 // Prompt the user for the quantity
@@ -126,12 +123,6 @@ namespace NiisMenu
             {
                 ButtonEnabled = true;
             }
-            TableNumberPicker.SelectedItem = null;
-        }
-
-        private void SongClicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

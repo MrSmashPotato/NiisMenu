@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.ListMenu"
-             Title="ListMenu">
+             Title="Menu List">
     <StackLayout>
         <StackLayout>
             <Picker x:Name="CategoryPicker" 
                     Title="Choose category"
                     BackgroundColor="White" 
                     TextColor="Black" 
-                    WidthRequest="200" Margin="0,0,0,10">
+                    WidthRequest="200" Margin="0,0,0,10"
+                  ToolTipProperties.Text="Click an item to edit">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Drinks</x:String>
@@ -36,8 +37,8 @@
                             <Image Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Aspect="AspectFit" Grid.Column="0" />
                             <StackLayout Grid.Column="1"
                                          Padding="10">
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Italic" />
-                                <Label Text="{Binding Price}" FontSize="25" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="End" />
+                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Italic" FontFamily="LarosaBlack"/>
+                                <Label Text="{Binding Price}" FontSize="25" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="End" FontFamily="LarosaBlack"/>
                             </StackLayout>
                             </Grid>
                     </ViewCell>

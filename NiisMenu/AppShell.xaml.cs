@@ -1,4 +1,6 @@
-﻿namespace NiisMenu
+﻿using NiisMenu.AdminPages;
+
+namespace NiisMenu
 {
     public partial class AppShell : Shell
     {

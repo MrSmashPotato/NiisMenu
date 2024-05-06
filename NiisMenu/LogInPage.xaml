@@ -7,7 +7,7 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
     <VerticalStackLayout>
         <Image Source="logo.png" WidthRequest="150"></Image>
-        <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center" FontFamily="LarosaBlack"></Label>
     </VerticalStackLayout>  
 
     <StackLayout VerticalOptions="CenterAndExpand"
@@ -38,7 +38,7 @@
             </StackLayout>
         </Frame>
             <StackLayout Padding="30">
-                <Button Text="Login" 
+                <Button Text="Login"
                     Clicked="OnLoginClicked" 
                     BackgroundColor="Green"
                     TextColor="White" 

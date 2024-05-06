@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NiisMenu.AddMenu"
-             Title="Add Menu Item"
+             Title="Add New Menu"
              BackgroundColor="WhiteSmoke">
 
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
@@ -10,7 +10,7 @@
         <Image x:Name="ImagePreview" 
                Aspect="AspectFit" 
                HeightRequest="200"
-               Margin="0,0,0,20" />
+               Margin="0,0,0,20"/>
 
         <!-- Entry for Name -->
         <Entry Placeholder="Name" 
@@ -18,7 +18,7 @@
                BackgroundColor="LightGray" 
                TextColor="Black" 
                WidthRequest="200" 
-               Margin="0,0,0,10"/>
+               Margin="0,0,0,10" MaxLength="13" />
 
         <!-- Entry for Price -->
         <Entry Placeholder="Price" 
@@ -58,7 +58,7 @@
         <Button Text="Select Image" 
                 Clicked="OnSelectImageButtonClicked"  
                 BackgroundColor="Blue" 
-                TextColor="White" 
+                TextColor="Yellow" 
                 WidthRequest="150"
                 Margin="0,20,0,10"
                 CornerRadius="30"/>

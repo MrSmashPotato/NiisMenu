@@ -6,7 +6,7 @@
     
     <StackLayout>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-            <Label Text="Sort:" VerticalOptions="Center" FontSize="15" Padding="20"/>
+            <Label Text="Sort:" VerticalOptions="Center" FontSize="15" Padding="20" FontFamily="LarosaBlack"/>
             <Picker x:Name="CategoryPicker" 
                     Title="All Menu" 
                     BackgroundColor="White" 
@@ -21,7 +21,7 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Label Text="Table No." VerticalOptions="Center" FontSize="15" Padding="10"/>
+            <Label Text="Table No." VerticalOptions="Center" FontSize="15" Padding="10" FontFamily="LarosaBlack"/>
             <Picker x:Name="TableNumberPicker" 
                     Title="#" 
                     BackgroundColor="White" 
@@ -46,7 +46,6 @@
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand"
                   RowHeight="150"
-                  SelectionMode="None"
                   SeparatorVisibility="Default" SeparatorColor="Transparent" BackgroundColor="WhiteSmoke"
                   >
             <!-- Here you will bind the ListView's ItemsSource property to the data source in your code-behind -->
@@ -71,39 +70,29 @@
                                    Aspect="Fill" />
                             <StackLayout  Padding="10" Grid.Row="0" Grid.Column="1">
                                 <Label Text="{Binding Name}"
-                                       FontSize="25" 
-                                        HorizontalOptions="Center"
-                                       FontAttributes="Bold"/>
+                                       FontSize="20" 
+                                        HorizontalOptions="CenterAndExpand"
+                                       FontAttributes="Bold" FontFamily="LarosaBlack"/>
                                 <Label Text="{Binding Price,StringFormat='₱{0:F2}'}"
                                        FontSize="20" 
                                         HorizontalOptions="Center"
-                                       FontAttributes="Bold" ></Label>
+                                       FontAttributes="Bold" FontFamily="LarosaBlack" ></Label>
                                 <Button Text="Order" 
                                         Clicked="OrderButton_Clicked"
                                         CommandParameter="{Binding .}" 
                                         HorizontalOptions="Center" 
                                         CornerRadius="30"
-                                        WidthRequest="100"/>
+                                        WidthRequest="100" BackgroundColor="Green"/>
 
                             </StackLayout>
                         </Grid>
 
                     </ViewCell>
-                    
-                </DataTemplate>
-                
-            </ListView.ItemTemplate>
 
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
         </ListView>
-        <StackLayout>
-            <Frame>
-                <Button Text="Add Song"
-                        BackgroundColor="Green"
-                        HeightRequest="60" 
-                        Clicked="SongClicked"></Button>
-            </Frame>
-            
-        </StackLayout>
 
     </StackLayout>
 </ContentPage>

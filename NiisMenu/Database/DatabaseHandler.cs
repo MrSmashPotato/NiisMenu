@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
+﻿using NiisMenu.Builder;
 using Plugin.CloudFirestore;
-using NiisMenu.Builder;
 
 namespace NiisMenu.Database
 {
@@ -36,11 +32,11 @@ namespace NiisMenu.Database
                 .WhereEqualsTo("Category", category)
                 .WhereEqualsTo("IsAvailable", true)
                 .GetAsync();
-                foreach (var document in querySnapshot.Documents)
-                {
-                    Menu menu = document.ToObject<Menu>();
-                    menuItems.Add(menu);
-                }
+            foreach (var document in querySnapshot.Documents)
+            {
+                Menu menu = document.ToObject<Menu>();
+                menuItems.Add(menu);
+            }
 
             List<Menu> sortedItem = menuItems.OrderBy(Menu => Menu.Name).ToList();
             return sortedItem;

@@ -1,7 +1,5 @@
-using Microsoft.Maui.Controls;
 using NiisMenu.AdminPages;
 using Plugin.CloudFirestore;
-using System;
 
 namespace NiisMenu
 {

@@ -1,6 +1,7 @@
+using NiisMenu.AdminPages;
 using NiisMenu.Builder;
 using Plugin.CloudFirestore;
-using Microsoft.Maui.Controls;
+using Plugin.LocalNotification;
 
 namespace NiisMenu
 {
@@ -28,7 +29,7 @@ namespace NiisMenu
                     }
                 });
         }
-
+       
         public async Task LoadPendingOrders()
         {
             List<EditOrder> pendingOrders = await GetPendingOrders();
@@ -43,14 +44,14 @@ namespace NiisMenu
                 .Collection("PendingOrder")
                 .OrderBy("TimeStamp")
                 .GetAsync();
-            
-                foreach (var document in querySnapshot.Documents)
-                {
-                    EditOrder neworder = document.ToObject<EditOrder>();
-                    neworder.OrderID = document.Id;
-                    pendingOrders.Add(neworder);
-                }
-            
+
+            foreach (var document in querySnapshot.Documents)
+            {
+                EditOrder neworder = document.ToObject<EditOrder>();
+                neworder.OrderID = document.Id;
+                pendingOrders.Add(neworder);
+            }
+
 
             return pendingOrders;
         }

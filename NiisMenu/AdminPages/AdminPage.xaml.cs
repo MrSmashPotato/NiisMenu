@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-
 namespace NiisMenu
 {
     public partial class AdminPage : ContentPage
@@ -39,4 +37,3 @@ namespace NiisMenu
         }
     }
 }
-    

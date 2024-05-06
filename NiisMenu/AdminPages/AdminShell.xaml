@@ -9,41 +9,42 @@
        Title="Admin Shell">
 
     <Shell.FlyoutHeader>
-        <VerticalStackLayout>
-            <Image Source="logo.png" WidthRequest="100"></Image>
-            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
+        <VerticalStackLayout Padding="20">
+            <Image Source="logo.png" WidthRequest="130"></Image>
+            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center" FontFamily="LarosaBlack"></Label>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
-    <Shell.FlyoutFooter>
-        <VerticalStackLayout>
-            <Image Source="logo.png" WidthRequest="100"></Image>
-            <Label Text="Niis RestauBar" HorizontalTextAlignment="Center"></Label>
-        </VerticalStackLayout>
-    </Shell.FlyoutFooter>
 
     <!-- Add log out button in the header -->
     <Shell.ToolbarItems>
         <ToolbarItem Text="Log Out" Clicked ="OnLogOutClicked" />
     </Shell.ToolbarItems>
-
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions=".30*,.70*" RowDefinitions="*,*,*" RowSpacing="10" ColumnSpacing ="10">
+                <HorizontalStackLayout Grid.Row="0" Spacing="10" Padding="10">
+                    <Image Source="{Binding FlyoutIcon}" WidthRequest="50" HeightRequest="50"></Image>
+                    <Label Text="{Binding Title}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontFamily="LarosaBlack"></Label>
+                </HorizontalStackLayout>
+            </Grid>
+            
+        </DataTemplate>
+    </Shell.ItemTemplate>
     <FlyoutItem Title="Home" 
                 FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="PendingOrder"
-              ContentTemplate="{DataTemplate local:PendingOrder}"
-              Route="PendingOrder" 
-              Icon="gals.png"/>
-        <ShellContent Title="AdminPage"
-                      ContentTemplate="{DataTemplate local:AdminPage}"
-                      Route="AdminPage" 
-                      Icon="bern.png"/>
-        <ShellContent Title="AddMenu"
+
+        <ShellContent Title="Pending Order"
+                      ContentTemplate="{DataTemplate local:PendingOrder}"
+                      Route="PendingOrder"
+                      Icon="orders3.svg"/>
+        <ShellContent Title="Add Menu"
                       ContentTemplate="{DataTemplate local:AddMenu}"
                       Route="AddMenu" 
-                      Icon="caticon.png"/>
-        <ShellContent Title="ListMenu"
+                      Icon="addmenu.svg"/>
+        <ShellContent Title="View/Edit Menu"
                       ContentTemplate="{DataTemplate local:ListMenu}"
                       Route="ListMenu" 
-                      Icon="gals.png"/>
+                      Icon="view.svg"/>
         
     </FlyoutItem>
 </Shell>

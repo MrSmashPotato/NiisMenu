@@ -9,7 +9,7 @@
                      HorizontalOptions="Start">
             <Label Text="Sort:"
                    VerticalOptions="Center" 
-                   FontSize="15" 
+                   FontSize="20" 
                    Padding="20" 
                    FontFamily="LarosaBlack"/>
             <Picker x:Name="CategoryPicker" 
@@ -29,7 +29,7 @@
             
             <Label Text="Table No." 
                    VerticalOptions="Center" 
-                   FontSize="15" 
+                   FontSize="20" 
                    Padding="10"
                    FontFamily="LarosaBlack"/>
             <Picker x:Name="TableNumberPicker" 
@@ -38,7 +38,7 @@
                     TextColor="Black" 
                     WidthRequest="30"
                     HeightRequest="50"
-                    FontSize="15">
+                    FontSize="20">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>1</x:String>

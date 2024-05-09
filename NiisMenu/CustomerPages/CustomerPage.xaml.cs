@@ -38,6 +38,7 @@ namespace NiisMenu
         {
             base.OnDisappearing();
             TableNumberPicker.SelectedItem = null;
+            CategoryPicker.SelectedItem = null;
         }
         private async Task LoadMenuItems()
         {
@@ -72,6 +73,7 @@ namespace NiisMenu
                 if (TableNumberPicker.SelectedItem == null)
                 {
                     await DisplayAlert("Error", "Please select a table number", "OK");
+                    TableNumberPicker.Focus();
                     return;
                 }
                 // Prompt the user for the quantity
@@ -125,9 +127,6 @@ namespace NiisMenu
             }
         }
 
-        private void Image_DescendantAdded(object sender, ElementEventArgs e)
-        {
-
-        }
+       
     }
 }

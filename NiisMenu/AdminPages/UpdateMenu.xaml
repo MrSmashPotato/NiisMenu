@@ -32,9 +32,18 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Switch x:Name="AvailableSwitch"
-                IsToggled="True" 
-                Margin="0,0,0,10"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Available" />
+            <Switch x:Name="AvailableSwitch"
+                    IsToggled="True"
+                    Grid.Column="1"
+                    Margin="0,0,0,10"/>
+        </Grid>
+        
         <StackLayout Orientation="Vertical"
                      HorizontalOptions="CenterAndExpand"
                      Padding="10">

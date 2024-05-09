@@ -64,7 +64,7 @@ public partial class ListMenu : ContentPage
     }
 
     private bool isbuttonEnabled = true;
-    private void MenuListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private void MenuListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (!isbuttonEnabled)
         {

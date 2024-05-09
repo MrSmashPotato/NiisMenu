@@ -22,7 +22,7 @@
         <ListView x:Name="MenuListView" 
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand"
-                  ItemSelected="MenuListView_ItemSelected"
+                  ItemSelected="MenuListViewItemSelected"
                   RowHeight="100">
             <!-- Here you will bind the ListView's ItemsSource property to the data source in your code-behind -->
             <ListView.ItemTemplate>
@@ -34,11 +34,23 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100" Aspect="AspectFit" Grid.Column="0" />
+                            <Image Source="{Binding ImageUrl}"
+                                   HeightRequest="100" 
+                                   WidthRequest="100"
+                                   Aspect="AspectFit"
+                                   Grid.Column="0" />
                             <StackLayout Grid.Column="1"
                                          Padding="10">
-                                <Label Text="{Binding Name}" FontSize="18" FontAttributes="Italic" FontFamily="LarosaBlack"/>
-                                <Label Text="{Binding Price}" FontSize="25" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="End" FontFamily="LarosaBlack"/>
+                                <Label Text="{Binding Name}" 
+                                       FontSize="18" 
+                                       FontAttributes="Italic"
+                                       FontFamily="LarosaBlack"/>
+                                <Label Text="{Binding Price}" 
+                                       FontSize="25" 
+                                       FontAttributes="Bold" 
+                                       Grid.Column="1" 
+                                       HorizontalOptions="End" 
+                                       FontFamily="LarosaBlack"/>
                             </StackLayout>
                             </Grid>
                     </ViewCell>

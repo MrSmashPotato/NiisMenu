@@ -5,8 +5,13 @@
     
     
     <StackLayout>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
-            <Label Text="Sort:" VerticalOptions="Center" FontSize="15" Padding="20" FontFamily="LarosaBlack"/>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Start">
+            <Label Text="Sort:"
+                   VerticalOptions="Center" 
+                   FontSize="15" 
+                   Padding="20" 
+                   FontFamily="LarosaBlack"/>
             <Picker x:Name="CategoryPicker" 
                     Title="All Menu" 
                     BackgroundColor="White" 
@@ -21,7 +26,12 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-            <Label Text="Table No." VerticalOptions="Center" FontSize="15" Padding="10" FontFamily="LarosaBlack"/>
+            
+            <Label Text="Table No." 
+                   VerticalOptions="Center" 
+                   FontSize="15" 
+                   Padding="10"
+                   FontFamily="LarosaBlack"/>
             <Picker x:Name="TableNumberPicker" 
                     Title="#" 
                     BackgroundColor="White" 
@@ -46,7 +56,9 @@
                   VerticalOptions="FillAndExpand" 
                   HorizontalOptions="FillAndExpand"
                   RowHeight="150"
-                  SeparatorVisibility="Default" SeparatorColor="Transparent" BackgroundColor="WhiteSmoke"
+                  SeparatorVisibility="Default" 
+                  SeparatorColor="Transparent"  
+                  BackgroundColor="WhiteSmoke"
                   >
             <!-- Here you will bind the ListView's ItemsSource property to the data source in your code-behind -->
             <ListView.ItemTemplate>
@@ -67,7 +79,7 @@
                                     Source="{Binding ImageUrl}" 
                                    HeightRequest="150"
                                    WidthRequest="150"
-                                   Aspect="Fill" />
+                                   Aspect="Fill"/>
                             <StackLayout  Padding="10" Grid.Row="0" Grid.Column="1">
                                 <Label Text="{Binding Name}"
                                        FontSize="20" 
@@ -78,7 +90,7 @@
                                         HorizontalOptions="Center"
                                        FontAttributes="Bold" FontFamily="LarosaBlack" ></Label>
                                 <Button Text="Order" 
-                                        Clicked="OrderButton_Clicked"
+                                        Clicked="OrderButtonClicked"
                                         CommandParameter="{Binding .}" 
                                         HorizontalOptions="Center" 
                                         CornerRadius="30"

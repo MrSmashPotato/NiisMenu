@@ -57,7 +57,7 @@ namespace NiisMenu
 
         
         private bool ButtonEnabled = true;
-        private async void OrderButton_Clicked(object sender, EventArgs e)
+        private async void OrderButtonClicked(object sender, EventArgs e)
         {
             if (!ButtonEnabled)
             {
@@ -123,6 +123,11 @@ namespace NiisMenu
             {
                 ButtonEnabled = true;
             }
+        }
+
+        private void Image_DescendantAdded(object sender, ElementEventArgs e)
+        {
+
         }
     }
 }

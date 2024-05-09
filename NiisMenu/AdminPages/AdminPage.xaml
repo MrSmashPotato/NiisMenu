@@ -5,10 +5,22 @@
              Title="Admin Page"
              BackgroundColor="White">
 
-    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="20">
-        <Button Text="Add Menu Item" Clicked="OnAddMenuItemClicked" BackgroundColor="SkyBlue" TextColor="White" WidthRequest="150" Margin="0,10,0,0"/>
+    <StackLayout VerticalOptions="CenterAndExpand"
+                 HorizontalOptions="CenterAndExpand" 
+                 Padding="20">
+        <Button Text="Add Menu Item" 
+                Clicked="OnAddMenuItemClicked" 
+                BackgroundColor="SkyBlue" 
+                TextColor="White" 
+                WidthRequest="150"
+                Margin="0,10,0,0"/>
     
-        <Button Text="View Menu" Clicked="Button_Clicked" BackgroundColor="SkyBlue" TextColor="White" WidthRequest="150" Margin="0,10,0,0"/>
+        <Button Text="View Menu" 
+                Clicked="ViewMenu" 
+                BackgroundColor="SkyBlue"
+                TextColor="White" 
+                WidthRequest="150" 
+                Margin="0,10,0,0"/>
     </StackLayout>
 
 </ContentPage>

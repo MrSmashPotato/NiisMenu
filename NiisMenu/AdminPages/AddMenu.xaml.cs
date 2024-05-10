@@ -14,7 +14,7 @@ namespace NiisMenu
         }
         private bool isBottonEnabled = true;
         private async void OnAddItemClicked(object sender, EventArgs e)
-        {
+        { 
             if (!isBottonEnabled)
             {
                 return;

@@ -35,5 +35,10 @@ namespace NiisMenu
         {
             await Navigation.PushAsync(new ListMenu());
         }
+
+        public void Method()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

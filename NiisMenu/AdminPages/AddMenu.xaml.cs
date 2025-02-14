@@ -139,5 +139,52 @@ namespace NiisMenu
                 await DisplayAlert("Error", ex.Message, "OK");
             }
         }
+        private async Task<bool> CheckAndRequestCameraPermission()
+        {
+            var status = await Permissions.CheckStatusAsync<Permissions.Camera>();
+            if (status != PermissionStatus.Granted)
+            {
+                status = await Permissions.RequestAsync<Permissions.Camera>();
+            }
+            return status == PermissionStatus.Granted;
+        }
+        private async void OnCaptureImageButtonClicked(object sender, EventArgs e)
+        {
+            if (await CheckAndRequestCameraPermission())
+            {
+                try
+                {
+                    var photo = await MediaPicker.CapturePhotoAsync();
+                    if (photo != null)
+                    {
+                        using (var stream = await photo.OpenReadAsync())
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await stream.CopyToAsync(memoryStream);
+                            imageData = memoryStream.ToArray();
+                        }
+
+                        // Display image preview
+                        ImagePreview.Source = ImageSource.FromStream(() => new MemoryStream(imageData));
+                    }
+                }
+                catch (FeatureNotSupportedException fnsEx)
+                {
+                    await DisplayAlert("Error", "Capture photo is not supported on this device.", "OK");
+                }
+                catch (PermissionException pEx)
+                {
+                    await DisplayAlert("Error", "Permissions not granted to capture photo.", "OK");
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Permission Denied", "Camera permission is required to capture photos.", "OK");
+            }
+        }
     }
 }
